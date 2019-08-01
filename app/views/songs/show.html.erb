@@ -1,4 +1,11 @@
-<h1><%= link_to @song.title, song_path(@song) %></h1>
+<h1> <%= link_to @song.title, song_path(@song) %></h1>
 <h3> by <%= display_artist(@song) %></h3>
 
 <%= link_to "All Songs", songs_path %>
+
+<% if flash[:alert] %>
+    <div id="success" style="color:rgba(255,255,255,1);">
+    <%= flash[:alert] %>
+    </div>
+    <br>
+<% end %>
